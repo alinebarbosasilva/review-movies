@@ -1,0 +1,16 @@
+<app-autocomplete/>
+<section>
+  <ul class="cards">
+    @for (movie of movies; track movie.id){
+      <li class="cards__card">
+        <img ngSrc="{{ 'https://image.tmdb.org/t/p/original' +movie.poster_path }}" width="300" height="400">
+        <div class="cards__info">
+          <h3>{{ movie.title }}</h3>
+          <p>Popularidade: {{ movie.popularity }}</p>
+        </div>
+      </li>
+    } @empty {
+      <li>Nenhum filme foi encontrado.</li>
+    }
+  </ul>
+</section>

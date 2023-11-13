@@ -1,0 +1,20 @@
+.autocomplete {
+  &__search {
+    width: 100vw;
+  }
+
+  &__info {
+    padding-bottom: 0.5rem;
+    gap: 1rem;
+    display: flex;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+h3 {
+  margin: 0!important;
+}

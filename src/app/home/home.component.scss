@@ -1,0 +1,28 @@
+section {
+  color: white;
+  padding: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  gap: 2rem;
+
+  &__card {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  &__info{
+  text-align: center;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+}

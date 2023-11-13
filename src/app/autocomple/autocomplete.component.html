@@ -1,0 +1,30 @@
+<form class="autocomplete" [formGroup]="form">
+  <mat-form-field class="autocomplete__search">
+    <mat-label>Filmes</mat-label>
+    <input type="text"
+           placeholder="Encontre sua pesquisa"
+           aria-label="Encontre seu filme"
+           matInput
+           formControlName="search"
+           [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
+      @for (movie of filteredOptions;track movie.id) {
+        <mat-option [value]="movie">
+          <div class="autocomplete__info">
+            <img ngSrc="{{ 'https://image.tmdb.org/t/p/original' +movie.poster_path }}" width="60" height="80">
+            <div class-="autocomplete__decription">
+              <h3>{{ movie.title }}</h3>
+              <p>Popularidade: {{ movie.popularity }}</p></div>
+          </div>
+
+        </mat-option>
+      } @empty {
+        @if (!!form.controls.search.value) {
+          <mat-option>
+            Nada foi encontrado.
+          </mat-option>
+        }
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
